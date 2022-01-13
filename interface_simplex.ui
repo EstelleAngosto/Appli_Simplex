@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>simplex</class>
+ <widget class="QMainWindow" name="simplex">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>848</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Resolution Simplex</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <widget class="QLabel" name="title_lbl">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Résolution Simplex</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="fonction_gb">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>551</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Fonction objectif</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QRadioButton" name="rbtn_max">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Maximiser</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtn_min">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>30</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Minimiser</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val1_fct">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>70</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val1_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 1</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val2_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val2_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val3_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>70</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val3_fct">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>70</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val4_fct">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val4_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val3_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val4_fct">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 4</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="contrainte1_gb">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>200</y>
+      <width>551</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Fonction contrainte 1</string>
+    </property>
+    <widget class="QDoubleSpinBox" name="dsb_val4_c1">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val4_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val3_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val3_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val2_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 2</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val4_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val1_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 1</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val1_c1">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val2_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val3_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>30</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_egal_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>égal</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_inf_c1">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>inférieur</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_sup_c1">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>supérieur</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_res_c1">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Résultat</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_res_c1">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="contrainte2_gb">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>360</y>
+      <width>551</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Fonction contrainte 2</string>
+    </property>
+    <widget class="QLabel" name="lbl_val3_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val4_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val3_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>30</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val4_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val2_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val1_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 1</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val1_c2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val2_c2_2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val3_c2">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val4_c2">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_res_c2">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_egal_c2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>égal</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_res_c2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Résultat</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_sup_c2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>supérieur</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_inf_c2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>inférieur</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="contrainte3_gb">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>520</y>
+      <width>551</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Fonction contrainte 3</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <widget class="QLabel" name="lbl_val3_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val4_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val3_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>30</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val4_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val2_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val1_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 1</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val1_c3">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val2_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val3_c3">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val4_c3">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_res_c3">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_inf_c3">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>inférieur</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_res_c3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Résultat</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_sup_c3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>supérieur</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_egal_c3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>égal</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="contrainte4_gb">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>680</y>
+      <width>551</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Fonction contrainte 4</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <widget class="QLabel" name="lbl_val3_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val4_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="ckb_val3_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>30</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Activer valeur 3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val4_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val2_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_val1_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Valeur 1</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val1_c4">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val2_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val3_c4">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>30</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_val4_c4">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>60</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dsb_res_c4">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>100</y>
+       <width>62</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <double>10001.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_res_c4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>100</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Résultat</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_sup_c4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>supérieur</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_egal_c4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>égal</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdb_inf_c4">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>100</y>
+       <width>95</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>inférieur</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_q1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>60</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Question 1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_q2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>100</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Question 2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_q3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>140</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Question 3</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_valider">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>180</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Valider</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
