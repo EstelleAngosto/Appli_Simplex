@@ -7,9 +7,8 @@ Created on Thu Jan 13 10:16:35 2022
 
 import numpy as np
 
-def col_piv (lp, last_col) :
+def col_piv (lp) :
     neg = False
-    change = False
     n = np.size(lp)
     
     for i in range(n):
@@ -20,30 +19,30 @@ def col_piv (lp, last_col) :
         col_neg = 0
         for j in range(n):
             if lp[j]<0:
-              if j!=last_col:
                if lp[j]<lp[col_neg]:
                    col_neg = j
-                   change = True
-        
-        if change == True :
-            return col_neg
-        else:
-           return -1
+        return col_neg
     else:
         return -1
 
-def lin_piv (lp,line,col,colp) : 
+def lin_piv (matrice,line,col,colp,last_line) : 
     coefs = []
-    linp = 0
+    lin_val = []
+    case=0
     
     for i in range(1,line):
-        coefs.append(lp[i,col-1]/lp[i,colp])
+       if i not in last_line :   
+         coefs.append(matrice[i,col-1]/matrice[i,colp])
+         lin_val.append(i)
         
-    for j in range(len(coefs)) :
-        if coefs[j] < coefs[linp]:
-            linp = j
-    
-    return linp+1
+    if len(coefs) != 0:
+      for j in range(len(coefs)) :
+         if coefs[j] < coefs[case]:
+            case = j
+        
+      return lin_val[case]
+    else:
+        return -1
 
 def calcul(lp,line,col,linp,colp):
     pivot = lp[linp,colp]
@@ -63,22 +62,31 @@ def calcul(lp,line,col,linp,colp):
 #%% Algo des simplex
 
 def simplex(simplex):
-
+    
+    last_ligne = []
     line, column = np.shape(simplex)
-
-    col_pivot = col_piv(simplex[0,:],-1)
+    
+    col_pivot = col_piv(simplex[0,:])
     print("Col pivot 1")
 
     while col_pivot != -1:
-        last_col=col_pivot
-        lin_pivot = lin_piv(simplex,line,column,col_pivot)
-        print("line pivot")
-        simplex = calcul(simplex, line, column, lin_pivot, col_pivot)
-        print("calcul des lignes")
-        col_pivot = col_piv(simplex[0,:],last_col)
-        print(col_pivot)
-        print(simplex)
-        print("Nouveau tour")
+        print(last_ligne)
+        lin_pivot = lin_piv(simplex,line,column,col_pivot,last_ligne)
+        if lin_pivot == -1 :
+            print("Toutes les lignes ont été utilisées.")
+            break
+        else : 
+            last_ligne.append(lin_pivot)
+            print("Last_ligne :")
+            print(last_ligne)
+            print("line pivot:")
+            print(lin_pivot)
+            simplex = calcul(simplex, line, column, lin_pivot, col_pivot)
+            print("calcul des lignes")
+            col_pivot = col_piv(simplex[0,:])
+            print(col_pivot)
+            print(simplex)
+            print("Nouveau tour")
 
     return(simplex)
 
@@ -504,7 +512,7 @@ def creation_matrice(liste_fct,liste_c1,liste_c2,liste_c3,liste_c4,type_c1,type_
                 matrice = fonction_BigM(i,matrice)
         
         print(matrice)
-        
+                
         simplex(matrice)
 
 # matrice = np.array([[-11,-16,-15,0,0,0,1,0],
